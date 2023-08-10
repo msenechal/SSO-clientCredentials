@@ -11,11 +11,9 @@ app = msal.ConfidentialClientApplication(
     client_credential=config["secret"],
     )
 
-result = None
 result = app.acquire_token_for_client(scopes=config["scope"])
 
 if "access_token" in result:
-    print(result['access_token'])
     with GraphDatabase.driver(config["NEO4J_URI"], auth=bearer_auth(result['access_token'])) as driver:
         driver.verify_connectivity()
         records, summary, keys = driver.execute_query(
