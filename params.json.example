@@ -1,0 +1,12 @@
+{
+    "client_id": "<client-id>",
+    "authority": "https://login.microsoftonline.com/<tenant-id>",
+    "secret": "<client-secret>",
+    "scope": ["api://<client-id>/.default"],
+    "NEO4J_URI": "bolt://localhost:7687",
+    "authOptions": {
+        "clientId": "<client-id>",
+        "authority": "https://login.microsoftonline.com/<tenant-id>",
+        "clientSecret": "<client-secret>"
+    }
+}

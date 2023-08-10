@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@azure/msal-node": "^1.18.0",
+    "neo4j-driver": "^5.11.0"
+  }
+}
