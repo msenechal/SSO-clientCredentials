@@ -17,7 +17,7 @@ if "access_token" in result:
     with GraphDatabase.driver(config["NEO4J_URI"], auth=bearer_auth(result['access_token'])) as driver:
         driver.verify_connectivity()
         records, summary, keys = driver.execute_query(
-        "CREATE (p:Person {name:'ServicePrincipal', type:'servicePrincipalSSO', app:'python'}) RETURN p", 
+        "MERGE (p:Person {name:'ServicePrincipal', type:'servicePrincipalSSO', app:'python'}) RETURN p", 
         database_="neo4j",
         )
 else:

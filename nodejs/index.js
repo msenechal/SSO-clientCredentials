@@ -22,7 +22,7 @@ function getClientCredentialsToken(cca, clientCredentialRequestScopes) {
               try {
                 const result = await session.executeWrite(async tx => {
                   return await tx.run(`
-                  CREATE (p:Person {name:'ServicePrincipal', type:'servicePrincipalSSO', app:'nodejs'}) RETURN p.name as name
+                  MERGE (p:Person {name:'ServicePrincipal', type:'servicePrincipalSSO', app:'nodejs'}) RETURN p.name as name
                     `, {}
                   )
                 })
